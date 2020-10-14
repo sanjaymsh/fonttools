@@ -31,6 +31,21 @@ matrix:
       env: TOXENV=py38-cov
     - python: 3.8
       env: TOXENV=py38-cy
+    - python: 3.6
+      env:
+        - TOXENV=mypy
+      arch: ppc64le
+    - python: 3.6
+      env:
+        - TOXENV=py36-cov,package_readme
+        - BUILD_DIST=true
+      arch: ppc64le
+    - python: 3.7
+      env: TOXENV=py37-cov
+      arch: ppc64le
+    - python: 3.8
+      env: TOXENV=py38-cov
+      arch: ppc64le
     - python: pypy3
       # disable coverage.py on pypy because of performance problems
       env: TOXENV=pypy3
