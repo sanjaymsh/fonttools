@@ -76,6 +76,10 @@ addons:
       - language-pack-de
 
 before_install:
+  - | 
+     if [[ "$TRAVIS_CPU_ARCH" == "ppc64le" ]]; then
+         sudo chown -Rv $USER:$GROUP ~/.cache/pip/wheels
+     fi
   - source ./.travis/before_install.sh
 
 install:
